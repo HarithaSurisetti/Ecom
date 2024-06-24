@@ -35,7 +35,7 @@ RecyclerView.Adapter<BrandAdapter.Viewholder>(){
         holder.binding.title.text=item.title
 
         Glide.with(holder.itemView.context)
-            .load(item.picUr)
+            .load(item.picUrl)
             .into(holder.binding.pic)
 
         holder.binding.root.setOnClickListener{
@@ -45,12 +45,12 @@ RecyclerView.Adapter<BrandAdapter.Viewholder>(){
             notifyItemChanged(selectedPosition)
         }
         holder.binding.title.setTextColor(context.resources.getColor(R.color.white))
-        if(selectedPosition==position){
-            holder.binding.pic.setBackgroundColor(0)
+        if(selectedPosition == position){
+            holder.binding.pic.setBackgroundResource(0)
             holder.binding.mainLayout.setBackgroundResource(R.drawable.purple_button_bg)
-            ImageViewCompat.setImageTintList(holder.binding.pic, ColorStateList.valueOf(context.getColor(R.color.black)))
+            ImageViewCompat.setImageTintList(holder.binding.pic, ColorStateList.valueOf(context.getColor(R.color.white)))
 
-            holder.binding.title.visibility= View.GONE
+            holder.binding.title.visibility= View.VISIBLE
         }
         else{
             holder.binding.pic.setBackgroundResource(R.drawable.grey_bg)
